@@ -2,9 +2,9 @@ import Lane from '../models/lane';
 import Note from '../models/note';
 import uuid from 'uuid';
 
-// export function getSomething(req, res) {
-//   return res.status(200).end();
-// }
+export function getSomething(req, res) {
+  return res.status(200).end();
+}
 
 export function addLane(req, res) {
   if (!req.body.name) {
@@ -39,18 +39,6 @@ export function deleteLane(req, res) {
       res.status(500).send(err);
     }
 
-    lane.notes.forEach(x => {
-      Note.findOne({id: x.id}).exec((err, note) => {
-        if (err) {
-          res.status(500).send(err);
-        }
-
-        note.remove(() => {
-          res.status(200).end();
-        });
-      })
-    })
-
     lane.remove(() => {
       res.status(200).end();
     });
@@ -58,13 +46,21 @@ export function deleteLane(req, res) {
 }
 
 
-export function editLane(req, res) {
-  Lane.findOne({id: req.params.laneId})
-    .then((lane) => {
-      lane.name = req.body.name
-      return lane.save()
-    })
-    .then(() => {
-      res.json(200).end()
-    })
+export function editLaneTitle(req, res) {
+  const laneId = req.body.id;
+  const newName = req.body.name;
+
+  if (!laneId) {
+    res.status(400).end();
+  }
+
+  Lane.findOne({ id: laneId })
+      .then((err, lane) => {
+        if (err) {
+          res.status(500).send(err);
+        }
+
+        lane.name = newName;
+        res.json(saved);
+      });
 }
