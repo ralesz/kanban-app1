@@ -1,1 +1,66 @@
 /* Lane styles */
+.Lane {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 43vh;
+    background-color: #ccc;
+    margin: 0 5px;
+  }
+  .Lane .LaneHeader {
+    height: 15vh;
+    width: 37vh;
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .LaneAddNote {
+    margin: 0 5px;
+  }
+  .LaneAddNote button {
+    width: auto;
+    height: auto;
+    color: #fff;
+    background-color: blue;
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 300;
+    transition: 1s linear;
+    margin-bottom: 5px;
+  
+  }
+  .LaneAddNote button:hover {
+    background-color: #fff;
+    color: blue;
+  }
+  .LaneHeader h4 {
+    font-size: 24px;
+    font-weight: 600;
+    color: navy;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px;
+  }
+  
+  .LaneDelete {
+    margin: 0 5px;
+  }
+  .LaneDelete button {
+    width: auto;
+    height: auto;
+    color: #fff;
+    background-color: red;
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 300;
+    margin-top: 5px;
+    transition: 1s linear;
+  }
+  
+  .Lane .LaneHeader .LaneDelete button:hover {
+    background-color: #fff;
+    color: red;
+  }

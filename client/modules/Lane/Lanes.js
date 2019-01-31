@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Lane from './LaneContainer.js';
 import { moveBetweenLanes } from './LaneActions';
+import styles from './Lanes.css';
 
 const Lanes = ({ lanes, moveNotes, moveBetweenLanes }) => {
   return (

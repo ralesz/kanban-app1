@@ -9,12 +9,12 @@ import { compose } from 'redux';
 // Import Style
 import styles from './Lane.css';
 
-class Lane extends React.Component {
-  constructor(props) {
-    super(props);
-      this.props = props;
-  }
-render() {
+// class Lane extends React.Component {
+//   constructor(props) {
+//     super(props);
+//       this.props = props;
+//   }
+  const Lane = (props) => {
   const { connectDropTarget, lane, laneNotes, editLane, addNote, updateLane, deleteLane } = props;
 
   const laneId = lane.id;
@@ -44,7 +44,7 @@ render() {
       </div>
     );
   }
-}
+// }
 
 Lane.propTypes = {
   lane: PropTypes.object,

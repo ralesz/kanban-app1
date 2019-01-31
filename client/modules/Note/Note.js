@@ -1,10 +1,3 @@
-// import React, { PropTypes } from 'react';
-// import styles from './Note.css';
-// import { DragSource, DropTarget } from 'react-dnd';
-// import ItemTypes from '../Kanban/itemTypes';
-// import { compose } from 'redux';
-// import PropTypes from 'prop-types';
-
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { DragSource, DropTarget } from 'react-dnd';
